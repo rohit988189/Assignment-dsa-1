@@ -1,0 +1,64 @@
+#include<iostream>
+using namespace std;
+
+class employee
+{
+  public: int id;
+           string name;
+ 
+
+};
+int main()
+{ int i;
+int flag=0;
+ employee arr[10];
+ employee values[5];
+ for(i=0;i<5;i++)
+ {
+     cout<<"Enter Emplyoyee id: ";
+     cin>>values[i].id;
+     cout<<"ENter the name: ";
+     cin>>values[i].name;
+     
+ }
+ 
+ for(i=0;i<10;i++)
+ {
+    arr[i].id = -1;
+ }
+
+ int b;
+ for(i=0;i<5;i++)
+ {
+    b=values[i].id%10;
+    arr[b].id=values[i].id;
+    arr[b].name=values[i].name;
+ }
+cout<<"\n   Hash TABLE  \n"<<endl;
+ cout<<"ArrayIdx"<<"   "<<"Value\n";
+ for(i=0;i<10;i++)
+ {
+    cout<<i<<"         "<<arr[i].id<<"\n";
+ }
+
+cout<<"\n\n";
+cout<<"Enter any id to search: ";
+int key;
+cin>>key;
+for(i=0;i<10;i++)
+{
+if(key==arr[i].id)
+{
+   
+   cout<<"ID: "<<arr[i].id;
+   cout<<"\nName: "<<arr[i].name;
+   flag++;
+ 
+}
+}
+if(flag==0)
+{
+    cout<<"\nNot Found:";
+}
+return 0;
+}
